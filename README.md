@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+# Netflix-GPT Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## setup
 
-## Available Scripts
+### Create React App
 
-In the project directory, you can run:
+1. I'm building Netflix-GPT using react and tailwindcss
+2. First, i had basic structure for our app using
+   cmd **npx create-react-app netflix-gpt**
 
-### `npm start`
+### Tailwindcss
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**1. npm i -D tailwindcss <br> 2. npx tailwindcss init**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Features to build in Netflix-GPT
 
-### `npm test`
+1. Login or signup page(If you are not loggedIn) <br>
+   1. signIn / signUp form
+   2. redirect to browse page
+2. Browse Page(you will go to browse page after authentication) <br>
+   a. Header <br>
+   b. Main Movie Container<br>
+   1. Movie Trailer in background
+   2. Title and description
+   3. Movie suggestions <br> Movies category <br> Movies list which is scrolling left to right or vice versa
+3. NetflixGPT <br>
+   1. Search Bar
+   2. Movie suggestion according to the searcg bar.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Process
 
-### `npm run build`
+1. Create-react-app
+2. Configured Tailwindcss
+3. Created Sign In Component
+4. Created Sign Up Component
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Resume from 1:22:00 14.Netflix GPT Project
