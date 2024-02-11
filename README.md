@@ -36,13 +36,28 @@
 5. Rouiting of App
 6. Form Validation
 7. useRef hook
+8. Firebase setup
+9. Deploying our app to firbase server
 
 ## Things I have learned
 
 1. If you want to validate a big form then use Formik library.
 2. At the time of validation how we can get the value of inputs, either we can use state variables or use useRef hook:
+   ````js
    const email = useRef(null);
-   ````html
    <input ref="{email}" type="text" /> ```\
    ````
 3. It gives you reference of that input box as an object
+4. Firebase setup <br>
+   1. Goto firebase webiste https://firebase.google.com
+   2. Click on get started
+   3. Create a new project
+   4. After project is created then click on continue and then click on web
+   5. then install firebase SDK in our app.
+   6. We have to enable authentication from firebase.
+   7. To deploy to firebase use the below cmd: first intall firebase cli - npm i-g firebase-tools
+      1. firebase login
+      2. firebase init
+      3. firebase deploy
+
+resume from 2:20:44
