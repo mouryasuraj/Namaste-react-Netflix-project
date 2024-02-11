@@ -33,7 +33,16 @@
 2. Configured Tailwindcss
 3. Created Sign In Component
 4. Created Sign Up Component
+5. Rouiting of App
+6. Form Validation
+7. useRef hook
 
+## Things I have learned
 
-
-Resume from 1:22:00 14.Netflix GPT Project
+1. If you want to validate a big form then use Formik library.
+2. At the time of validation how we can get the value of inputs, either we can use state variables or use useRef hook:
+   const email = useRef(null);
+   ````html
+   <input ref="{email}" type="text" /> ```\
+   ````
+3. It gives you reference of that input box as an object
