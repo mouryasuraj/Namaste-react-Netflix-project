@@ -2,7 +2,10 @@ import { useRef, useState } from 'react';
 import Header from './Header'
 import { checkValidate } from '../utils/validateForm';
 import { auth } from '../utils/firebase'
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth'
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from 'firebase/auth'
+import { useDispatch } from 'react-redux';
+import { addUser } from '../utils/slices/userSlice';
+
 
 
 const Login = () => {
@@ -10,6 +13,7 @@ const Login = () => {
     const [isSignInForm, setIsSignInForm] = useState(true);
     const [errorMessage, setErrorMessage] = useState(null)
     const [successMsg, setSuccessMsg] = useState(null)
+    const dispatch = useDispatch()
 
     // using useRef for referencing the value of input field of name, email and password
     const name = useRef(null)
@@ -28,31 +32,32 @@ const Login = () => {
         // process to authentication
         // signIn or signUp
         if (!isSignInForm) {
-            // SignUp
+            // SignUp Logic
             createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
                 .then((userCredential) => {
                     const user = userCredential.user
-                    console.log(user);
+                    // update your fullName using updateProfile function which is given by firebase
+                    updateProfile(user, { displayName: name.current.value })
+                        .then(() => {
+                            const { uid, email, displayName } = auth.currentUser
+                            dispatch(addUser(
+                                {uid, email, displayName}
+                            ))
+                        }).catch((error)=>{
+                            setErrorMessage(error.message)
+                        })
                     setSuccessMsg('Signed Up successfull. Please log In')
                     form.reset()
-                    setTimeout(() => {
-                        setSuccessMsg(null)
-                    }, 2000);
                 })
                 .catch((error) => {
-                    setErrorMessage(error.message)
+                    setErrorMessage("Email already in use")
                 })
         } else {
-            // SignIn
+            // SignIn Logic
             signInWithEmailAndPassword(auth, email.current.value, password.current.value)
                 .then((userCredential) => {
-                    const user = userCredential.user
-                    console.log(user);
                     setSuccessMsg('Logged in Successfully')
                     form.reset()
-                    setTimeout(() => {
-                        setSuccessMsg(null)
-                    }, 2000);
                 })
                 .catch((error) => {
                     setErrorMessage("Email or password is wrong")
@@ -63,7 +68,8 @@ const Login = () => {
     // Change signIn to SignUp function or vice versa
     const changeForm = () => {
         setIsSignInForm(!isSignInForm)
-        setErrorMessage('')
+        setErrorMessage(null)
+        setSuccessMsg(null)
         document.querySelector('form').reset()
     }
 
