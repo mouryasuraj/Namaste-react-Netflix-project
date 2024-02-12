@@ -59,5 +59,3 @@
       1. firebase login
       2. firebase init
       3. firebase deploy
-
-resume from 2:20:44
