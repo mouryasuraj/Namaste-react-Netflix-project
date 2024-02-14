@@ -5,6 +5,7 @@ import { auth } from '../utils/firebase'
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from 'firebase/auth'
 import { useDispatch } from 'react-redux';
 import { addUser } from '../utils/slices/userSlice';
+import { BG_IMAGE } from '../utils/constant';
 
 
 
@@ -14,6 +15,7 @@ const Login = () => {
     const [errorMessage, setErrorMessage] = useState(null)
     const [successMsg, setSuccessMsg] = useState(null)
     const dispatch = useDispatch()
+
 
     // using useRef for referencing the value of input field of name, email and password
     const name = useRef(null)
@@ -41,9 +43,9 @@ const Login = () => {
                         .then(() => {
                             const { uid, email, displayName } = auth.currentUser
                             dispatch(addUser(
-                                {uid, email, displayName}
+                                { uid, email, displayName }
                             ))
-                        }).catch((error)=>{
+                        }).catch((error) => {
                             setErrorMessage(error.message)
                         })
                     setSuccessMsg('Signed Up successfull. Please log In')
@@ -74,7 +76,7 @@ const Login = () => {
     }
 
     return (
-        <div className="w-[100%] min-h-[150vh]  bg-cover relative bg-black sm:bg-[url('https://assets.nflxext.com/ffe/siteui/vlv3/5e16108c-fd30-46de-9bb8-0b4e1bbbc509/29d8d7d7-83cc-4b5f-aa9b-6fd4f68bfaa6/IN-en-20240205-popsignuptwoweeks-perspective_alpha_website_large.jpg')]">
+        <div style={{ backgroundImage: `url(${BG_IMAGE})`, }} className={`w-[100%] min-h-[150vh]  bg-cover relative bg-black sm:bg-none]`}>
             <div className='sm:w-[100%] sm:min-h-[100vh] fixed  sm:bg-black sm:opacity-50'></div>
             {/* Sign In Form */}
             <div className='absolute top-0 w-full'>

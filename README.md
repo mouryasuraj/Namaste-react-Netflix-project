@@ -41,6 +41,8 @@
 10. Authenticated signIn and signUp form with firebase, now any one can create their account on this app and login to use it
 11. Setup the user store in redux
 12. onAuthStateChange --> Write this code in useEffect hook because we only need to run once
+13. Always unsubscribe onAuthStateChange when component is unmounted. onAuthStateChange return a unsubscribe function - return ()=> unsubscribe() -- if want to clean code in useEffect then use return like this.
+14. Always add hardcoded value to constant files.
 
 ## Things I have learned
 
@@ -64,3 +66,5 @@
       3. firebase deploy
 5. As soon as user logged in or user sign up we should store the user data in our redux store so that we can use this data in anywhere in our program.
 6. If you want to show something after user get logged in then we use the current user object for ex: {user && <p>Hello, Welcome back</p>}
+
+resume from 15.Let build the core - 32:00
