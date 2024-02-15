@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom"
+import { useNavigate, Link } from "react-router-dom"
 import { useEffect } from "react"
 import { auth } from "../utils/firebase"
 import { onAuthStateChanged, signOut } from 'firebase/auth'
@@ -32,9 +32,9 @@ const Header = () => {
   }, [])
 
   return (
-    <div className='w-full sm:px-8  px-3 top-0 flex items-center lg:justify-center bg-gray-900'>
-      <div className='sm:w-[80%] w-[100%] flex items-center justify-between'>
-        <img className='sm:w-[190px] w-[130px] cursor-pointer' src={LOGO_URL} alt="" />
+    <div className={`w-full z-[100] sm:px-8  px-3 top-0 flex items-center lg:justify-center ${user && 'bg-gradient-to-b from-[rgba(0,0,0,1)]'}`}>
+      <div className='md:w-[80%] w-[100%] flex items-center justify-between'>
+        <Link to={`${user && '/browse'}`}><img className='sm:w-[190px] w-[130px] cursor-pointer' src={LOGO_URL} alt="" /></Link>
         <div className="flex items-center gap-4">
           {user && <p className="font-bold text-lg text-gray-100">{user.displayName}</p>}
           {user && <button onClick={handleSignOut} className="text-white text-md bg-red-600 py-2 px-4 hover:bg-red-700 rounded-md">SignOut</button>}

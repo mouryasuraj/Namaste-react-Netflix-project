@@ -27,6 +27,7 @@ function App() {
   return (
     <Provider store={appStore}>
       <RouterProvider router={appRouter}>
+      <Outlet />
       </RouterProvider>
     </Provider>
   );

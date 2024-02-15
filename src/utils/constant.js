@@ -12,3 +12,7 @@ export const options = {
         Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4YjY5NGFlMTViODM3ODlhYTJmYjNmZTJmZjBlZGIwOSIsInN1YiI6IjY1Y2Q5NGU1YTNiNWU2MDE4NTJjMmVmZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.mZntcT6-NwKSOwL34U1lY6dNQEHoPvBVfTSFhYFbtJA'
     }
 };
+
+
+// Youtube URL
+export const YOUTUBE_URL = 'https://www.youtube.com/embed/'

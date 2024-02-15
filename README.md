@@ -47,6 +47,11 @@
 - In React Strict Mode, certain functions, including render methods and effects (including useEffect), are intentionally invoked twice. This is done for the purpose of detecting and highlighting side effects in your code during development. React Strict Mode is a development-only feature and does not affect the production build of your application.
 - Registered on TMDB website and create app and got the api key auth and acccess token
 - Get data from TMDB (Now playing) api.
+- Plan to structure the browse page
+- Created Slice for moviesVideo and movies
+- updated the store with slice
+- embeded the youtube video and maked it autuplay
+-
 
 ## Things I have learned
 
@@ -78,3 +83,5 @@ resume from 15.Let build the core - 32:00
 1. Goto the TMDB website -- https://www.themoviedb.org/
 2. Goto Edit profile after loggedIn in TMDB website
 3. Then goto API on the left side
+
+resume from 2:37:00
