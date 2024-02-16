@@ -2,9 +2,20 @@
 const MoviesListContainer = () => {
   return (
     <div>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, consequuntur! lorem10000
+
     </div>
   )
 }
 
 export default MoviesListContainer
+
+
+// Structure of MovielistContainer
+/*
+1.Movie list of Popular
+   Moviecard * n
+2.Movie list of Now Playing
+   Moviecard * n
+3.Movie list of Upcoming
+   Moviecard * n
+*/

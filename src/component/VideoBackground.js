@@ -14,7 +14,7 @@ const VideoBackground = ({ movieId }) => {
     // customHook
 
     return (
-        <div className="md:w-screen md:h-screen w-full aspect-video">
+        <div className="w-screen aspect-video">
             <iframe
                 className="w-[100%] aspect-video block"
                 src={YOUTUBE_URL + trailer?.key + `?autoplay=1&loop=1&playlist=${trailer.key}&mute=1`}

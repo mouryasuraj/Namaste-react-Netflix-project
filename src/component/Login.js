@@ -76,8 +76,8 @@ const Login = () => {
     }
 
     return (
-        <div style={{ backgroundImage: `url(${BG_IMAGE})`, }} className={`w-[100%] min-h-[150vh]  bg-cover relative bg-black sm:bg-none]`}>
-            <div className='sm:w-[100%] sm:min-h-[100vh] fixed  sm:bg-black sm:opacity-50'></div>
+        <div style={{ backgroundImage: `url(${BG_IMAGE})`, }} className={`w-[100%] min-h-[150vh]  bg-cover relative]`}>
+            <div className='bg-black w-full h-screen fixed md:bg-opacity-50'></div>
             {/* Sign In Form */}
             <div className='absolute top-0 w-full'>
                 <Header />
