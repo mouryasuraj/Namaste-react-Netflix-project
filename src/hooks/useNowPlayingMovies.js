@@ -9,10 +9,12 @@ const useNowPlayingMovies = () => {
 
 
     // calling the above function in the useEffect hook, because we want this api calls once at initial time when my component render
+    /* eslint-disable react-hooks/exhaustive-deps */
     useEffect(() => {
         getNowPlayingMovies()
         return () => { dispatch(addNowPlayingMovies(null)) }
     }, [])
+    /* eslint-enable react-hooks/exhaustive-deps */
 
     // calling the Now Playing api
     const getNowPlayingMovies = async () => {

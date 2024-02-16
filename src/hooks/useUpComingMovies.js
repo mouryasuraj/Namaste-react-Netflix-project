@@ -7,12 +7,13 @@ import { addUpComingMovies } from "../utils/slices/moviesSlice";
 const useUpComingMovies = () => {
     const dispatch = useDispatch()
 
-
     // calling the above function in the useEffect hook, because we want this api calls once at initial time when my component render
+    /* eslint-disable react-hooks/exhaustive-deps */
     useEffect(() => {
         getUpComingMovies()
         return () => dispatch(addUpComingMovies(null))
     }, [])
+    /* eslint-enable react-hooks/exhaustive-deps */
 
     // calling the Now Playing api
     const getUpComingMovies = async () => {

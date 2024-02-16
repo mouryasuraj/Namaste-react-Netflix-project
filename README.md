@@ -54,11 +54,19 @@
 - created movies list and movies card
 - make app responsive in mobile devices
 - created separate file for custom hooks
-- showing movies category dianamically
+- showing movies category dynamically
 - added feature in signUp form - send email verification
 - clean up the code by adding return in useEffect code
-- add loader
+- added loader
+- If you want to call useEffect only once on create-react-app then we have to tell linter that disable linter and enable linter
 
+  ```js
+  /* eslint-disable react-hooks/exhaustive-deps */
+  useEffect(() => {
+    // Your code here
+  }, []);
+  /* eslint-enable react-hooks/exhaustive-deps */
+  ```
 
 ## Things I have learned
 

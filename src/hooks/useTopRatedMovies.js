@@ -8,11 +8,14 @@ const useTopRatedMovies = () => {
     const dispatch = useDispatch()
 
 
+
     // calling the above function in the useEffect hook, because we want this api calls once at initial time when my component render
+    /* eslint-disable react-hooks/exhaustive-deps */
     useEffect(() => {
         getTopRatedMovies()
-        return ()=> dispatch(addTopRatedMovies(null))
+        return () => dispatch(addTopRatedMovies(null))
     }, [])
+    /* eslint-enable react-hooks/exhaustive-deps */
 
     // calling the Now Playing api
     const getTopRatedMovies = async () => {
