@@ -32,7 +32,7 @@ const Header = () => {
   }, [])
 
   return (
-    <div className={`w-full z-[100] sm:px-8  px-3 top-0 flex items-center lg:justify-center ${user && 'md:bg-gradient-to-b md:from-[rgba(0,0,0,.1)] bg-black'}`}>
+    <div className={`w-full z-[100] sm:px-8  px-3 top-0 flex items-center lg:justify-center ${user && 'md:bg-gradient-to-b md:from-black bg-gradient-to-b from-black to-black'}`}>
       <div className='md:w-[80%] w-[100%] flex items-center justify-between'>
         <Link to={`${user && '/browse'}`}><img className='sm:w-[190px] w-[120px] cursor-pointer' src={LOGO_URL} alt="" /></Link>
         <div className="flex items-center gap-4">

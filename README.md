@@ -51,7 +51,10 @@
 - Created Slice for moviesVideo and movies
 - updated the store with slice
 - embeded the youtube video and maked it autuplay
--
+- created movies list and movies card
+- make app responsive in mobile devices
+- created separate file for custom hooks
+- showing movies category dianamically
 
 ## Things I have learned
 
@@ -83,5 +86,12 @@ resume from 15.Let build the core - 32:00
 1. Goto the TMDB website -- https://www.themoviedb.org/
 2. Goto Edit profile after loggedIn in TMDB website
 3. Then goto API on the left side
+
+<!-- Tailwind SCroll bar hide -->
+
+plugins: [
+require('tailwind-scrollbar-hide'),
+],
+and then use scrollbar-hide in classname to use it
 
 resume from 2:37:00

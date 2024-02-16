@@ -5,6 +5,10 @@ import { addMoviesVideos } from "../utils/slices/moviesSlice"
 
 const useMoviesVideo = (movieId) => {
     const dispatch = useDispatch()
+    
+    useEffect(() => {
+        fetchMoviesVideo()
+    }, [])
 
     const fetchMoviesVideo = async () => {
         const data = await fetch(`https://api.themoviedb.org/3/movie/${movieId}/videos?language=en-US`, options)
@@ -12,9 +16,6 @@ const useMoviesVideo = (movieId) => {
         dispatch(addMoviesVideos(json.results))
     }
 
-    useEffect(() => {
-        fetchMoviesVideo()
-    }, [])
 
 }
 

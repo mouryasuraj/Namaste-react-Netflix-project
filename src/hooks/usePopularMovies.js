@@ -1,26 +1,26 @@
 import { useEffect } from "react";
 import { options } from "../utils/constant";
 import { useDispatch } from "react-redux";
-import { addNowPlayingMovies } from "../utils/slices/moviesSlice";
+import { addPopularMovies } from "../utils/slices/moviesSlice";
 
 
-const useNowPlayingMovies = () => {
+const usePopularMovies = () => {
     const dispatch = useDispatch()
 
 
     // calling the above function in the useEffect hook, because we want this api calls once at initial time when my component render
     useEffect(() => {
-        getNowPlayingMovies()
+        getPopularMovies()
     }, [])
 
     // calling the Now Playing api
-    const getNowPlayingMovies = async () => {
-        const data = await fetch('https://api.themoviedb.org/3/movie/now_playing?page=1', options)
+    const getPopularMovies = async () => {
+        const data = await fetch('https://api.themoviedb.org/3/movie/popular?page=1', options)
         const json = await data.json()
-        dispatch(addNowPlayingMovies(json.results))
+        dispatch(addPopularMovies(json.results))
     }
 
 
 }
 
-export default useNowPlayingMovies;
+export default usePopularMovies;

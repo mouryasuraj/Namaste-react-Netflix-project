@@ -2,19 +2,30 @@ import Header from "./Header"
 import useNowPlayingMovies from "../hooks/useNowPlayingMovies"
 import MovieContainer from "./MovieContainer"
 import MoviesListContainer from "./MoviesListContainer"
+import usePopularMovies from "../hooks/usePopularMovies"
+import useTopRatedMovies from "../hooks/useTopRatedMovies"
+import useUpComingMovies from "../hooks/useUpComingMovies"
 
 const Browse = () => {
 
   // Custom Hook
   useNowPlayingMovies()
+  usePopularMovies()
+  useTopRatedMovies()
+  useUpComingMovies()
+
 
   return (
-    <div className="h-screen">
-      <div className="flex items-center w-full">
+    <div className="bg-black ">
+      <div className="flex items-center absolute top-0 w-full">
         <Header />
       </div>
-      <MovieContainer />
-      <MoviesListContainer />
+      <div>
+        <div className="md:ml-[-17px]">
+          <MovieContainer />
+        </div>
+        <MoviesListContainer />
+      </div>
     </div>
   )
 }

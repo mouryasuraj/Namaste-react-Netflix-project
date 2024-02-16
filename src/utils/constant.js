@@ -13,6 +13,8 @@ export const options = {
     }
 };
 
-
 // Youtube URL
 export const YOUTUBE_URL = 'https://www.youtube.com/embed/'
+
+// MovieIMG CDN
+export const CDN_MOVIE_POSTER = 'https://image.tmdb.org/t/p/w500/'
