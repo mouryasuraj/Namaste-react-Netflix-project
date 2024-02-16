@@ -1,3 +1,4 @@
+## View Site : https://netflixgptbysuraj.netlify.app/
 # Netflix-GPT Project
 
 ## setup
