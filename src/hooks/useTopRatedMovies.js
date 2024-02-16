@@ -11,6 +11,7 @@ const useTopRatedMovies = () => {
     // calling the above function in the useEffect hook, because we want this api calls once at initial time when my component render
     useEffect(() => {
         getTopRatedMovies()
+        return ()=> dispatch(addTopRatedMovies(null))
     }, [])
 
     // calling the Now Playing api

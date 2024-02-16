@@ -1,83 +1,20 @@
-import { useRef, useState } from 'react';
+
 import Header from './Header'
-import { checkValidate } from '../utils/validateForm';
-import { auth } from '../utils/firebase'
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from 'firebase/auth'
-import { useDispatch } from 'react-redux';
-import { addUser } from '../utils/slices/userSlice';
 import { BG_IMAGE } from '../utils/constant';
+import useLogin from '../hooks/useLogin';
+import Loader from './Loader';
+
 
 
 
 const Login = () => {
 
-    const [isSignInForm, setIsSignInForm] = useState(true);
-    const [errorMessage, setErrorMessage] = useState(null)
-    const [successMsg, setSuccessMsg] = useState(null)
-    const dispatch = useDispatch()
-
-
-    // using useRef for referencing the value of input field of name, email and password
-    const name = useRef(null)
-    const email = useRef(null)
-    const password = useRef(null)
-    // handleForm
-    const handleForm = (e) => {
-        const form = document.querySelector('form')
-        e.preventDefault()
-        // validate form
-        const message = checkValidate(!isSignInForm && name.current.value, email.current.value, password.current.value, isSignInForm)
-        console.log(message);
-        setErrorMessage(message)
-        if (message) return;
-
-        // process to authentication
-        // signIn or signUp
-        if (!isSignInForm) {
-            // SignUp Logic
-            createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
-                .then((userCredential) => {
-                    const user = userCredential.user
-                    // update your fullName using updateProfile function which is given by firebase
-                    updateProfile(user, { displayName: name.current.value })
-                        .then(() => {
-                            const { uid, email, displayName } = auth.currentUser
-                            dispatch(addUser(
-                                { uid, email, displayName }
-                            ))
-                        }).catch((error) => {
-                            setErrorMessage(error.message)
-                        })
-                    setSuccessMsg('Signed Up successfull. Please log In')
-                    form.reset()
-                })
-                .catch((error) => {
-                    setErrorMessage("Email already in use")
-                })
-        } else {
-            // SignIn Logic
-            signInWithEmailAndPassword(auth, email.current.value, password.current.value)
-                .then((userCredential) => {
-                    setSuccessMsg('Logged in Successfully')
-                    form.reset()
-                })
-                .catch((error) => {
-                    setErrorMessage("Email or password is wrong")
-                })
-        }
-    }
-
-    // Change signIn to SignUp function or vice versa
-    const changeForm = () => {
-        setIsSignInForm(!isSignInForm)
-        setErrorMessage(null)
-        setSuccessMsg(null)
-        document.querySelector('form').reset()
-    }
+    const { isSignInForm, errorMessage, successMsg, name, email, password, loading, handleForm, changeForm } = useLogin()
 
     return (
         <div style={{ backgroundImage: `url(${BG_IMAGE})`, }} className={`w-[100%] min-h-[150vh]  bg-cover relative]`}>
             <div className='bg-black w-full h-screen fixed md:bg-opacity-50'></div>
+            {loading && <Loader />}
             {/* Sign In Form */}
             <div className='absolute top-0 w-full'>
                 <Header />

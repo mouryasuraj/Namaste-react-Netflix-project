@@ -11,6 +11,7 @@ const useNowPlayingMovies = () => {
     // calling the above function in the useEffect hook, because we want this api calls once at initial time when my component render
     useEffect(() => {
         getNowPlayingMovies()
+        return () => { dispatch(addNowPlayingMovies(null)) }
     }, [])
 
     // calling the Now Playing api

@@ -8,6 +8,7 @@ import useUpComingMovies from "../hooks/useUpComingMovies"
 
 const Browse = () => {
 
+
   // Custom Hook
   useNowPlayingMovies()
   usePopularMovies()

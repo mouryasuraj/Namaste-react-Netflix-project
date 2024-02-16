@@ -5,9 +5,10 @@ import { addMoviesVideos } from "../utils/slices/moviesSlice"
 
 const useMoviesVideo = (movieId) => {
     const dispatch = useDispatch()
-    
+
     useEffect(() => {
         fetchMoviesVideo()
+        return () => dispatch(addMoviesVideos(null))
     }, [])
 
     const fetchMoviesVideo = async () => {

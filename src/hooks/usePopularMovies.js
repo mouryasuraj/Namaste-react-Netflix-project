@@ -11,6 +11,7 @@ const usePopularMovies = () => {
     // calling the above function in the useEffect hook, because we want this api calls once at initial time when my component render
     useEffect(() => {
         getPopularMovies()
+        return () => dispatch(addPopularMovies(null))
     }, [])
 
     // calling the Now Playing api

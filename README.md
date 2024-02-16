@@ -55,6 +55,10 @@
 - make app responsive in mobile devices
 - created separate file for custom hooks
 - showing movies category dianamically
+- added feature in signUp form - send email verification
+- clean up the code by adding return in useEffect code
+- add loader
+
 
 ## Things I have learned
 
