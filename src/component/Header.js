@@ -14,6 +14,7 @@ const Header = () => {
   const handleSignOut = () => {
     signOut(auth)
   }
+  /* eslint-disable react-hooks/exhaustive-deps */
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -30,6 +31,8 @@ const Header = () => {
     })
     return () => unsubscribe()
   }, [])
+  /* eslint-enable react-hooks/exhaustive-deps */
+
 
   return (
     <div className={`w-full z-[100] sm:px-8  px-3 top-0 flex items-center lg:justify-center ${user && 'md:bg-gradient-to-b md:from-black bg-gradient-to-b from-black to-black'}`}>
