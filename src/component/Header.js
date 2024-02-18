@@ -6,27 +6,45 @@ import { useDispatch } from 'react-redux'
 import { addUser, removeUser } from '../utils/slices/userSlice'
 import { LOGO_URL } from "../utils/constant"
 import { useSelector } from "react-redux"
+import useLogin from "../hooks/useLogin"
+import Loader from "./Loader"
+
+
 const Header = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
+  const { loading, setLoading } = useLogin()
   const user = useSelector((store) => store.user)
 
+
   const handleSignOut = () => {
-    signOut(auth)
+    setLoading(true)
+    setTimeout(() => {
+      setLoading(false)
+      signOut(auth)
+    }, 600);
   }
   /* eslint-disable react-hooks/exhaustive-deps */
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
+        setLoading(true)
         // signIn or signUp
-        const { uid, email, displayName } = user
-        dispatch(addUser({ uid, email, displayName }))
-        navigate('/browse')
+        setTimeout(() => {
+          const { uid, email, displayName } = user
+          dispatch(addUser({ uid, email, displayName }))
+          navigate('/browse')
+          setLoading(false)
+        }, 600);
       } else {
+        setLoading(true)
         // signOut
-        dispatch(removeUser())
-        navigate('/')
+        setTimeout(() => {
+          dispatch(removeUser())
+          navigate('/')
+          setLoading(false)
+        }, 600);
       }
     })
     return () => unsubscribe()
@@ -43,6 +61,7 @@ const Header = () => {
           {user && <button onClick={handleSignOut} className="text-white md:text-md text-sm bg-red-600 md:py-2 p-1 md:px-4 hover:bg-red-700 rounded-md">SignOut</button>}
         </div>
       </div>
+      {loading && <div className="fixed top-0 left-0 w-screen z-[100] h-screen"><Loader /></div>}
     </div>
   )
 }
