@@ -9,7 +9,7 @@ export const options = {
     method: 'GET',
     headers: {
         accept: 'application/json',
-        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4YjY5NGFlMTViODM3ODlhYTJmYjNmZTJmZjBlZGIwOSIsInN1YiI6IjY1Y2Q5NGU1YTNiNWU2MDE4NTJjMmVmZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.mZntcT6-NwKSOwL34U1lY6dNQEHoPvBVfTSFhYFbtJA'
+        Authorization: 'Bearer ' + process.env.REACT_APP_TMDB_OPTION_KEY
     }
 };
 
@@ -21,11 +21,11 @@ export const CDN_MOVIE_POSTER = 'https://image.tmdb.org/t/p/w500/'
 
 
 // Openai secret Key
-export const openAIKey = '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'
+export const openAIKey = process.env.REACT_APP_OPENAI_KEY
 
 // Key for GPT
 export const key1 = 'Act as a movie recommendation system and suggest some movies for the query '
-export const key2 = '. only give me names of 5 movies with comma separated, for example: Gadar, Golmaal, Dhamaal, Phir Hera Pheri, Dhol. If i write any movie name then also show me that movie in the list of movies '
+export const key2 = '. only give me names of 5 movies with comma separated, for example: Gadar, Golmaal, Dhamaal, Phir Hera Pheri, Dhol. If i write any movie name then also show me that movie in the list of movies. Only give movies in string, do not include exta number in it like Example: 1.Hera pheri, Khiladi, etc. always give movies name only'
 
 
 // Multilanguage

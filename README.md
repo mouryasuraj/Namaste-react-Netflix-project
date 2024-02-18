@@ -134,6 +134,9 @@ async function main() {
 main();
 ```
 
+// How to did secret keys or files
 
-
-resume from 2:58:00
+1. Create a .env file
+2. put the key in that file and named as REACT_APP_KEYNAME=key --> REACT_APP is mandatory
+3. If you want to access that key in your file that use this --> process.env.REACT_APP_KEYNAME
+4. And add .env file to .gitignore

@@ -14,7 +14,8 @@ const GPTMovies = () => {
 
             {
                 movieNames.map((movie, index) => (
-                    <MovieList key={movie} title={movie} movies={movieResults[index]} />
+                    !movieResults[index] ? null :
+                        <MovieList key={movie} title={movie} movies={movieResults[index]} />
                 ))
             }
         </div>
