@@ -18,3 +18,19 @@ export const YOUTUBE_URL = 'https://www.youtube.com/embed/'
 
 // MovieIMG CDN
 export const CDN_MOVIE_POSTER = 'https://image.tmdb.org/t/p/w500/'
+
+// Multilanguage
+export const multiLanguage = [
+    {
+        identifier: 'en',
+        name: 'English'
+    },
+    {
+        identifier: 'hindi',
+        name: 'Hindi'
+    },
+    {
+        identifier: 'spanish',
+        name: 'Spanish'
+    },
+]

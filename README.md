@@ -60,6 +60,9 @@
 - clean up the code by adding return in useEffect code
 - added loader
 - If you want to call useEffect only once on create-react-app then we have to tell linter that disable linter and enable linter
+- created gptSearch component
+- created multilanguage feature in gptSeach page
+
 
   ```js
   /* eslint-disable react-hooks/exhaustive-deps */

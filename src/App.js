@@ -5,6 +5,7 @@ import { Outlet, RouterProvider } from "react-router-dom";
 import { createBrowserRouter } from "react-router-dom";
 import Login from "./component/Login";
 import Browse from "./component/Browse";
+import GPTSearch from "./component/GPTSearch";
 
 const appRouter = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const appRouter = createBrowserRouter([
       {
         path: '/browse',
         element: <Browse />
+      },
+      {
+        path: '/',
+        element: <GPTSearch />
       }
     ]
   }
@@ -27,7 +32,7 @@ function App() {
   return (
     <Provider store={appStore}>
       <RouterProvider router={appRouter}>
-      <Outlet />
+        <Outlet />
       </RouterProvider>
     </Provider>
   );

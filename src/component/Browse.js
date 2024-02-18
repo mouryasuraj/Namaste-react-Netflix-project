@@ -5,9 +5,13 @@ import MoviesListContainer from "./MoviesListContainer"
 import usePopularMovies from "../hooks/usePopularMovies"
 import useTopRatedMovies from "../hooks/useTopRatedMovies"
 import useUpComingMovies from "../hooks/useUpComingMovies"
+import { useSelector } from "react-redux"
+import GPTSearch from "./GPTSearch"
+
 
 const Browse = () => {
 
+  const showGPT = useSelector(store => store.gpt.showGPT)
 
   // Custom Hook
   useNowPlayingMovies()
@@ -21,12 +25,15 @@ const Browse = () => {
       <div className="flex items-center absolute top-0 w-full">
         <Header />
       </div>
-      <div>
-        <div className="md:ml-[-17px]">
-          <MovieContainer />
-        </div>
-        <MoviesListContainer />
-      </div>
+      {
+        showGPT ?
+          <GPTSearch /> :
+          <div>
+            <div className="md:ml-[-17px]">
+              <MovieContainer />
+            </div>
+            <MoviesListContainer />
+          </div>}
     </div>
   )
 }
