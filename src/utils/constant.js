@@ -19,6 +19,15 @@ export const YOUTUBE_URL = 'https://www.youtube.com/embed/'
 // MovieIMG CDN
 export const CDN_MOVIE_POSTER = 'https://image.tmdb.org/t/p/w500/'
 
+
+// Openai secret Key
+export const openAIKey = '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'
+
+// Key for GPT
+export const key1 = 'Act as a movie recommendation system and suggest some movies for the query '
+export const key2 = '. only give me names of 5 movies with comma separated, for example: Gadar, Golmaal, Dhamaal, Phir Hera Pheri, Dhol. If i write any movie name then also show me that movie in the list of movies '
+
+
 // Multilanguage
 export const multiLanguage = [
     {

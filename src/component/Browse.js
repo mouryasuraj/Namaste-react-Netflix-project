@@ -6,7 +6,7 @@ import usePopularMovies from "../hooks/usePopularMovies"
 import useTopRatedMovies from "../hooks/useTopRatedMovies"
 import useUpComingMovies from "../hooks/useUpComingMovies"
 import { useSelector } from "react-redux"
-import GPTSearch from "./GPTSearch"
+import GPTSearchPage from "./GPTSearchPage"
 
 
 const Browse = () => {
@@ -27,7 +27,7 @@ const Browse = () => {
       </div>
       {
         showGPT ?
-          <GPTSearch /> :
+          <GPTSearchPage /> :
           <div>
             <div className="md:ml-[-17px]">
               <MovieContainer />

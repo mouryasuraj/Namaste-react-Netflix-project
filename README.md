@@ -1,4 +1,5 @@
 ## View Site : https://netflixgptbysuraj.netlify.app/
+
 # Netflix-GPT Project
 
 ## setup
@@ -63,7 +64,6 @@
 - created gptSearch component
 - created multilanguage feature in gptSeach page
 
-
   ```js
   /* eslint-disable react-hooks/exhaustive-deps */
   useEffect(() => {
@@ -95,19 +95,45 @@
 5. As soon as user logged in or user sign up we should store the user data in our redux store so that we can use this data in anywhere in our program.
 6. If you want to show something after user get logged in then we use the current user object for ex: {user && <p>Hello, Welcome back</p>}
 
-resume from 15.Let build the core - 32:00
-
-<!-- TMDB(The Movie DataBase) -->
+// TMDB(The Movie DataBase)
 
 1. Goto the TMDB website -- https://www.themoviedb.org/
 2. Goto Edit profile after loggedIn in TMDB website
 3. Then goto API on the left side
 
-<!-- Tailwind SCroll bar hide -->
+// Tailwind SCroll bar hide
 
 plugins: [
 require('tailwind-scrollbar-hide'),
 ],
 and then use scrollbar-hide in classname to use it
 
-resume from 2:37:00
+// Open AI setup - https://platform.openai.com
+
+```bash
+  npm install -D openai
+```
+
+Put the below code in app
+
+```js
+import OpenAI from "openai";
+import { openAIKey } from "./constant";
+
+const openai = new OpenAI({
+  apiKey: process.env[openAIKey], // This is the default and can be omitted
+});
+
+async function main() {
+  const chatCompletion = await openai.chat.completions.create({
+    messages: [{ role: "user", content: "Say this is a test" }],
+    model: "gpt-3.5-turbo",
+  });
+}
+
+main();
+```
+
+
+
+resume from 2:58:00
