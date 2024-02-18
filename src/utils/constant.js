@@ -21,7 +21,7 @@ export const CDN_MOVIE_POSTER = 'https://image.tmdb.org/t/p/w500/'
 
 
 // Openai secret Key
-export const openAIKey = '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'
+export const openAIKey = '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'
 
 // Key for GPT
 export const key1 = 'Act as a movie recommendation system and suggest some movies for the query '
