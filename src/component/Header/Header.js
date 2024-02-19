@@ -1,15 +1,15 @@
 import { useNavigate, Link } from "react-router-dom"
 import { useEffect } from "react"
-import { auth } from "../utils/firebase"
+import { auth } from "../../utils/firebase/firebase"
 import { onAuthStateChanged, signOut } from 'firebase/auth'
 import { useDispatch } from 'react-redux'
-import { addUser, removeUser } from '../utils/slices/userSlice'
-import { LOGO_URL, multiLanguage } from "../utils/constant"
+import { addUser, removeUser } from '../../utils/slices/userSlice'
+import { LOGO_URL, multiLanguage } from "../../utils/constant"
 import { useSelector } from "react-redux"
-import useLogin from "../hooks/useLogin"
+import useLogin from "../../hooks/useLogin"
 import Loader from "./Loader"
-import { toggleGPTSearch } from "../utils/slices/gptSlice"
-import { changeLanguage } from "../utils/slices/configSlice"
+import { toggleGPTSearch } from "../../utils/slices/gptSlice"
+import { changeLanguage } from "../../utils/slices/configSlice"
 
 
 const Header = () => {

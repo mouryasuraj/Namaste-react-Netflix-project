@@ -1,5 +1,5 @@
 
-import loadingImg from '../assets/giphy.gif'
+import loadingImg from '../../assets/giphy.gif'
 
 const Loader = () => {
 

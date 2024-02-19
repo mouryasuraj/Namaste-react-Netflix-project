@@ -1,5 +1,5 @@
-import language from "../utils/languageConstant"
-import useGPT from "../hooks/useGPT"
+import language from "../../../utils/languageConstant"
+import useGPT from "../../../hooks/useGPT"
 import { useSelector } from "react-redux"
 
 const GPTSearch = () => {

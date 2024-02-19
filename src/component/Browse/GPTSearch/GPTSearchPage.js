@@ -2,7 +2,7 @@ import { useEffect } from "react"
 import GPTMovies from "./GPTMovies"
 import GPTSearch from "./GPTSearch"
 import { useDispatch } from "react-redux"
-import { addGPtResults } from '../utils/slices/gptSlice'
+import { addGPtResults } from '../../../utils/slices/gptSlice'
 
 const GPTSearchPage = () => {
     const dispatch = useDispatch()

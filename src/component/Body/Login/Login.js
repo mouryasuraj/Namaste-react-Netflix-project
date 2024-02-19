@@ -1,6 +1,6 @@
-import Header from './Header'
-import { BG_IMAGE } from '../utils/constant';
-import useLogin from '../hooks/useLogin'
+import Header from '../../Header/Header'
+import { BG_IMAGE } from '../../../utils/constant';
+import useLogin from '../../../hooks/useLogin'
 
 
 const Login = () => {

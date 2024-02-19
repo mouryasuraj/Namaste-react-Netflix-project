@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux"
 import { useRef } from "react"
-import openai from "../utils/openAi"
+import openai from "../utils/OpenAI/openAi"
 import { key1, key2 } from "../utils/constant"
 import { options } from "../utils/constant"
 import { addGPtResults } from "../utils/slices/gptSlice"

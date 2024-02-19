@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import { checkValidate } from '../utils/validateForm';
-import { auth } from '../utils/firebase'
+import { auth } from '../utils/firebase/firebase'
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from 'firebase/auth'
 import { useDispatch } from 'react-redux';
 import { addUser } from '../utils/slices/userSlice';

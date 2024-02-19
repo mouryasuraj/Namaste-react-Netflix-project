@@ -1,12 +1,12 @@
-import Header from "./Header"
-import useNowPlayingMovies from "../hooks/useNowPlayingMovies"
-import MovieContainer from "./MovieContainer"
-import MoviesListContainer from "./MoviesListContainer"
-import usePopularMovies from "../hooks/usePopularMovies"
-import useTopRatedMovies from "../hooks/useTopRatedMovies"
-import useUpComingMovies from "../hooks/useUpComingMovies"
+import Header from "../Header/Header"
+import useNowPlayingMovies from "../../hooks/useNowPlayingMovies"
+import MovieContainer from "./MoviesContainer/MovieContainer"
+import MoviesListContainer from "./MoviesContainer/MoviesListContainer"
+import usePopularMovies from "../../hooks/usePopularMovies"
+import useTopRatedMovies from "../../hooks/useTopRatedMovies"
+import useUpComingMovies from "../../hooks/useUpComingMovies"
 import { useSelector } from "react-redux"
-import GPTSearchPage from "./GPTSearchPage"
+import GPTSearchPage from "./GPTSearch/GPTSearchPage"
 
 
 const Browse = () => {

@@ -1,11 +1,11 @@
-import Body from "./component/Body";
+import Body from "./component/Body/Body";
 import { Provider } from 'react-redux'
-import appStore from './utils/appStore'
+import appStore from './utils/store/appStore'
 import { Outlet, RouterProvider } from "react-router-dom";
 import { createBrowserRouter } from "react-router-dom";
-import Login from "./component/Login";
-import Browse from "./component/Browse";
-import GPTSearch from "./component/GPTSearch";
+import Login from "./component/Body/Login/Login";
+import Browse from "./component/Browse/Browse";
+import GPTSearch from "./component/Browse/GPTSearch/GPTSearch";
 
 const appRouter = createBrowserRouter([
   {

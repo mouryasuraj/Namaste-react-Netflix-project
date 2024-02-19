@@ -1,4 +1,4 @@
-import { CDN_MOVIE_POSTER } from "../utils/constant"
+import { CDN_MOVIE_POSTER } from "../../../utils/constant"
 
 const MovieCard = ({ posterPath }) => {
     if(!posterPath) return null
