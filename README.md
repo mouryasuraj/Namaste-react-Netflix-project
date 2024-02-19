@@ -140,3 +140,7 @@ main();
 2. put the key in that file and named as REACT_APP_KEYNAME=key --> REACT_APP is mandatory
 3. If you want to access that key in your file that use this --> process.env.REACT_APP_KEYNAME
 4. And add .env file to .gitignore
+
+// Memoization of data
+
+Memoization is a technique used in programming to optimize the performance of functions by caching the results of expensive function calls and returning the cached result when the same inputs occur again.

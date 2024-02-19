@@ -1,15 +1,16 @@
 import { useEffect } from "react"
 import { options } from "../utils/constant"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { addMoviesVideos } from "../utils/slices/moviesSlice"
 
 const useMoviesVideo = (movieId) => {
     const dispatch = useDispatch()
+    const moviesVideos = useSelector(store => store.movies.moviesVideos)
 
 
     /* eslint-disable react-hooks/exhaustive-deps */
     useEffect(() => {
-        fetchMoviesVideo()
+        !moviesVideos && fetchMoviesVideo()
         return () => dispatch(addMoviesVideos(null))
     }, [])
     /* eslint-enable react-hooks/exhaustive-deps */

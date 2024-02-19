@@ -1,16 +1,17 @@
 import { useEffect } from "react";
 import { options } from "../utils/constant";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addUpComingMovies } from "../utils/slices/moviesSlice";
 
 
 const useUpComingMovies = () => {
     const dispatch = useDispatch()
+    const upComingMovies = useSelector(store => store.movies.upComingMovies)
 
     // calling the above function in the useEffect hook, because we want this api calls once at initial time when my component render
     /* eslint-disable react-hooks/exhaustive-deps */
     useEffect(() => {
-        getUpComingMovies()
+        !upComingMovies && getUpComingMovies()
         return () => dispatch(addUpComingMovies(null))
     }, [])
     /* eslint-enable react-hooks/exhaustive-deps */

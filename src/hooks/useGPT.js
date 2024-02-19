@@ -1,12 +1,11 @@
 import { useDispatch, useSelector } from "react-redux"
-import { useRef, useState } from "react"
+import { useRef } from "react"
 import openai from "../utils/openAi"
 import { key1, key2 } from "../utils/constant"
 import { options } from "../utils/constant"
 import { addGPtResults } from "../utils/slices/gptSlice"
 
 const useGPT = () => {
-    const [isUserSearch, setIsUserSearch] = useState(false)
     const dispatch = useDispatch()
     const inputText = useRef(null)
     const langKey = useSelector(store => store.confige.lang)
@@ -14,7 +13,6 @@ const useGPT = () => {
 
     // HandleGPTsearch
     const handleGPTSearch = async (e) => {
-        setIsUserSearch(true)
         e.preventDefault()
         if (inputText.current.value === '') return alert('Please write something')
         const query = key1 + inputText.current.value + key2;
@@ -26,7 +24,6 @@ const useGPT = () => {
         const fetchedMovies = gptAPIResults.map((movie) => fetchTMDBMovies(movie))  //It will give me the promise
         const movieResults = await Promise.all(fetchedMovies)
         dispatch(addGPtResults({ movieResults: movieResults, movieNames: gptAPIResults }))
-        setIsUserSearch(false)
     }
 
     // FetchGPTSearchedMoviesFromTMDB
@@ -36,7 +33,7 @@ const useGPT = () => {
         return json?.results;
     }
 
-    return { langKey, inputText, handleGPTSearch, isUserSearch }
+    return { langKey, inputText, handleGPTSearch }
 }
 
 export default useGPT;
