@@ -15,7 +15,6 @@ const useLogin = () => {
     const name = useRef(null)
     const email = useRef(null)
     const password = useRef(null)
-    const form = useRef(null)
 
     // handleForm
     const handleForm = (e) => {
@@ -42,7 +41,6 @@ const useLogin = () => {
                         }).catch((error) => {
                             setErrorMessage(error.message)
                         })
-                    resetForm()
                 })
                 .catch((error) => {
                     setErrorMessage("Email already in use")
@@ -51,7 +49,6 @@ const useLogin = () => {
             // SignIn Logic
             signInWithEmailAndPassword(auth, email.current.value, password.current.value)
                 .then((userCredential) => {
-                    resetForm()
                 })
                 .catch((error) => {
                     setErrorMessage("Email or password is wrong")
@@ -63,16 +60,11 @@ const useLogin = () => {
     const changeForm = () => {
         setIsSignInForm(!isSignInForm)
         setErrorMessage(null)
-        form.current.reset()
     }
 
-    const resetForm = () => {
-        setTimeout(() => {
-            form.current.reset()
-        }, 600)
-    }
 
-    return { isSignInForm, errorMessage, name, email, password, loading, form, setIsSignInForm, setErrorMessage, handleForm, changeForm, setLoading }
+
+    return { isSignInForm, errorMessage, name, email, password, loading, setIsSignInForm, setErrorMessage, handleForm, changeForm, setLoading }
 }
 
 export default useLogin;

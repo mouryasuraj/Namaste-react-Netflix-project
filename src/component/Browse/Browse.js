@@ -21,19 +21,20 @@ const Browse = () => {
 
 
   return (
-    <div className="bg-black ">
-      <div className="flex items-center absolute top-0 w-full">
+    <div className="bg-black overflow-hidden">
+      <div className="flex items-center absolute top-0 w-full justify-between">
         <Header />
       </div>
       {
         showGPT ?
           <GPTSearchPage /> :
           <div>
-            <div className="md:ml-[-17px]">
+            <div className="md:ml-[-17px] pt-10 md:pt-0">
               <MovieContainer />
             </div>
             <MoviesListContainer />
-          </div>}
+          </div>
+      }
     </div>
   )
 }

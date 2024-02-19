@@ -14,7 +14,7 @@ const Login = () => {
             {/* Sign In Form */}
             <div className='absolute top-0 w-full'>
                 <Header />
-                <div className='sm:max-w-[500px] mx-auto sm:px-16 sm:py-12 px-5 mt-6 relative rounded-md bg-black bg-opacity-75'>
+                <div className='sm:max-w-[500px] mx-auto md:px-16 md:py-12 px-5 mt-28 relative  rounded-md bg-black bg-opacity-75'>
                     <h2 className='text-white sm:text-4xl text-2xl font-bold  my-5'>{isSignInForm ? 'Sign In' : 'Sign Up'}</h2>
                     <form onSubmit={handleForm} ref={form} className='flex flex-col'>
                         {!isSignInForm && <input
